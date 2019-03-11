@@ -103,4 +103,12 @@ public class Player {
             }
         }
     }
+
+    public void promotePawn(Pieces piece) {
+        Board.board[piece.getCurrentPoint().getX()][piece.getCurrentPoint().getY()] = piece.getPieceConstant() + getPlayer();
+        for (int i = 0; i < 16; i++) {
+            if(pieces[i].getCurrentPoint().equals(piece.getCurrentPoint()))
+                pieces[i] = piece;
+        }
+    }
 }
